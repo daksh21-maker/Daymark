@@ -48,8 +48,8 @@ fun DaymarkRoot() {
             TopAppBar(
                 title = { Text(title) },
                 actions = {
-                    if (route != SETTINGS) 
-                            IconButton(onClick = { nav.navigate(SETTINGS) { launchSingleTop = true } }) {
+                    if (route != SETTINGS) {
+                        IconButton(onClick = { nav.navigate(SETTINGS) { launchSingleTop = true } }) {
                             Icon(Icons.Filled.Settings, contentDescription = "Settings")
                         }
                     }
@@ -63,9 +63,8 @@ fun DaymarkRoot() {
                         selected = route == tab.route,
                         onClick = {
                             nav.navigate(tab.route) {
-    popUpTo(nav.graph.findStartDestination().id)
-    launchSingleTop = true
-}
+                                popUpTo(nav.graph.findStartDestination().id)
+                                launchSingleTop = true
                             }
                         },
                         icon = { Icon(tab.icon, contentDescription = null) },
