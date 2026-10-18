@@ -63,8 +63,9 @@ fun DaymarkRoot() {
                         selected = route == tab.route,
                         onClick = {
                             nav.navigate(tab.route) {
-                                popUpTo(nav.graph.findStartDestination().id) 
-                                launchSingleTop = true
+    popUpTo(nav.graph.findStartDestination().id)
+    launchSingleTop = true
+}
                             }
                         },
                         icon = { Icon(tab.icon, contentDescription = null) },
