@@ -16,7 +16,15 @@ android {
         versionCode = 1
         versionName = "0.1.0-m1"
     }
-
+        // Fixed debug key so every build is signed the same way.
+    signingConfigs {
+        getByName("debug") {
+            storeFile = rootProject.file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false // enable + add rules during Milestone 7 hardening
